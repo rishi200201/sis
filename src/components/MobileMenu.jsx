@@ -1,22 +1,17 @@
-import { useEffect } from "react";
-
-export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
+export const MobileMenu = ({ menuOpen, setMenuOpen, onResumeOpen }) => {
   return (
     <div
-      className={`fixed top-0 left-0 w-full bg-gradient-to-br from-[rgba(10,10,15,0.98)] via-[rgba(15,10,20,0.98)] to-[rgba(10,10,15,0.98)] backdrop-blur-xl z-40 flex flex-col items-center justify-center
-                     transition-all duration-300 ease-in-out
-
-                     ${
-                       menuOpen
-                         ? "h-screen opacity-100 pointer-events-auto"
-                         : "h-0 opacity-0 pointer-events-none"
-                     }
-                   `}
+      className={`fixed inset-0 z-40 flex flex-col items-center justify-center transition-all duration-300 bg-white ${
+        menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+      }`}
     >
-      {/* Close Button */}
+      {/* Red top bar */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-[#DC2626]" />
+
+      {/* Close button */}
       <button
         onClick={() => setMenuOpen(false)}
-        className="absolute top-5 right-5 sm:top-6 sm:right-6 text-white text-2xl sm:text-3xl focus:outline-none cursor-pointer w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+        className="absolute top-5 right-6 w-10 h-10 flex items-center justify-center text-gray-400 hover:text-[#DC2626] transition-colors duration-300"
         aria-label="Close Menu"
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -24,75 +19,65 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
         </svg>
       </button>
 
-      {/* Menu Items */}
-      <nav className="flex flex-col items-center gap-4 sm:gap-6">
-        <a
-          href="#home"
-          onClick={() => setMenuOpen(false)}
-          className={`group relative text-xl sm:text-2xl font-semibold text-white transform transition-all duration-300 px-6 py-3 rounded-xl
-                    ${
-                      menuOpen
-                        ? "opacity-100 translate-y-0"
-                        : "opacity-0 translate-y-5"
-                    }        
-            `}
-          style={{ transitionDelay: menuOpen ? "100ms" : "0ms" }}
-        >
-          <span className="relative z-10">Home</span>
-          <span className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-          <span className="absolute bottom-2 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-3/4 transition-all duration-300"></span>
-        </a>
-        
-        <a
-          href="#about"
-          onClick={() => setMenuOpen(false)}
-          className={`group relative text-xl sm:text-2xl font-semibold text-white transform transition-all duration-300 px-6 py-3 rounded-xl
-            ${
-              menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-            }        
-    `}
-          style={{ transitionDelay: menuOpen ? "150ms" : "0ms" }}
-        >
-          <span className="relative z-10">About</span>
-          <span className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-          <span className="absolute bottom-2 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400 group-hover:w-3/4 transition-all duration-300"></span>
-        </a>
-        
-        <a
-          href="#projects"
-          onClick={() => setMenuOpen(false)}
-          className={`group relative text-xl sm:text-2xl font-semibold text-white transform transition-all duration-300 px-6 py-3 rounded-xl
-            ${
-              menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-            }        
-    `}
-          style={{ transitionDelay: menuOpen ? "200ms" : "0ms" }}
-        >
-          <span className="relative z-10">Projects</span>
-          <span className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-          <span className="absolute bottom-2 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 group-hover:w-3/4 transition-all duration-300"></span>
-        </a>
-        
-        <a
-          href="#contact"
-          onClick={() => setMenuOpen(false)}
-          className={`group relative text-xl sm:text-2xl font-semibold text-white transform transition-all duration-300 px-6 py-3 rounded-xl
-            ${
-              menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-            }        
-    `}
-          style={{ transitionDelay: menuOpen ? "250ms" : "0ms" }}
-        >
-          <span className="relative z-10">Contact</span>
-          <span className="absolute inset-0 bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-          <span className="absolute bottom-2 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-green-400 to-emerald-400 group-hover:w-3/4 transition-all duration-300"></span>
-        </a>
+      {/* Logo inside menu */}
+      <div className="absolute top-4 left-6 flex items-center gap-2">
+        <div className="w-8 h-8 rounded-lg bg-[#DC2626] flex items-center justify-center">
+          <span className="font-black text-white text-sm font-mono">rk</span>
+        </div>
+        <span className="font-black text-gray-900 text-lg">Rishi<span className="text-[#DC2626]"> Kumar</span></span>
+      </div>
+
+      <nav className="flex flex-col items-center gap-1">
+        {[
+          { name: "Home",     delay: "80ms" },
+          { name: "About",    delay: "140ms" },
+          { name: "Projects", delay: "200ms" },
+          { name: "Contact",  delay: "260ms" },
+        ].map(({ name, delay }) => (
+          <a
+            key={name}
+            href={`#${name.toLowerCase()}`}
+            onClick={() => setMenuOpen(false)}
+            className={`relative text-4xl font-black text-gray-800 hover:text-[#DC2626] transition-all duration-300 px-8 py-2 group ${
+              menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+            }`}
+            style={{ transitionDelay: menuOpen ? delay : "0ms" }}
+          >
+            {name}
+            <span className="absolute bottom-1 left-8 h-0.5 w-0 bg-[#DC2626] group-hover:w-12 transition-all duration-300 rounded-full" />
+          </a>
+        ))}
+        <div className="mt-8 flex flex-col items-center gap-3">
+          <a
+            href="#contact"
+            onClick={() => setMenuOpen(false)}
+            className={`px-10 py-4 bg-[#DC2626] text-white text-lg font-black rounded-xl hover:bg-[#B91C1C] transition-all duration-300 shadow-[0_4px_20px_rgba(220,38,38,0.35)] ${
+              menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+            }`}
+            style={{ transitionDelay: menuOpen ? "320ms" : "0ms" }}
+          >
+            Hire Me
+          </a>
+          <button
+            onClick={() => { setMenuOpen(false); onResumeOpen(); }}
+            className={`inline-flex items-center gap-2 px-8 py-3 border-2 border-gray-200 text-gray-600 text-base font-bold rounded-xl hover:border-[#DC2626] hover:text-[#DC2626] transition-all duration-300 ${
+              menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+            }`}
+            style={{ transitionDelay: menuOpen ? "380ms" : "0ms" }}
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+            </svg>
+            View Resume
+          </button>
+        </div>
       </nav>
 
-      {/* Decorative Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-blue-600/10 to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-purple-600/10 to-transparent rounded-full blur-3xl"></div>
+      {/* Bottom decoration */}
+      <div className="absolute bottom-8 flex items-center gap-6 text-xs text-gray-400">
+        <a href="https://github.com/rishi200201" target="_blank" rel="noopener noreferrer" className="hover:text-[#DC2626] transition-colors duration-300">GitHub</a>
+        <span className="w-1 h-1 rounded-full bg-gray-300" />
+        <a href="mailto:rishi20020107@gmail.com" className="hover:text-[#DC2626] transition-colors duration-300">rishi20020107@gmail.com</a>
       </div>
     </div>
   );

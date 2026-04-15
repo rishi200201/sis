@@ -1,296 +1,268 @@
 import { RevealOnScroll } from "../RevealOnScroll";
 
 export const About = () => {
-  const frontendSkills = [
-    { name: "React", icon: "⚛️", color: "from-cyan-400 to-blue-500" },
-    { name: "Vite", icon: "⚡", color: "from-purple-400 to-pink-500" },
-    { name: "TailwindCSS", icon: "🎨", color: "from-cyan-300 to-blue-400" },
-    { name: "Chakra UI", icon: "💎", color: "from-teal-400 to-cyan-500" },
-    { name: "Material UI", icon: "🎭", color: "from-blue-400 to-indigo-500" }
-  ];
-  
-  const backendSkills = [
-    { name: "Node.js", icon: "🟢", color: "from-green-400 to-emerald-500" },
-    { name: "MongoDB", icon: "🍃", color: "from-green-500 to-teal-600" },
-    { name: "JWT", icon: "🔐", color: "from-orange-400 to-red-500" },
-    { name: "Nodemailer", icon: "📧", color: "from-blue-400 to-cyan-500" },
-    { name: "OpenAI", icon: "🤖", color: "from-purple-400 to-pink-500" },
-    { name: "AWS", icon: "☁️", color: "from-orange-400 to-yellow-500" }
+  const frontendSkills = ["React", "Vite", "TailwindCSS", "Chakra UI", "Material UI"];
+  const backendSkills  = ["Node.js", "MongoDB", "Express", "JWT", "Nodemailer", "OpenAI", "AWS"];
+
+  const services = [
+    {
+      title: "Business Websites",
+      desc: "Fast, responsive, SEO-ready websites for startups, brands, and local businesses.",
+      icon: (
+        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
+    },
+    {
+      title: "Full-Stack Web Apps",
+      desc: "End-to-end MERN applications — authentication, REST APIs, databases.",
+      icon: (
+        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+        </svg>
+      ),
+    },
+    {
+      title: "Portals & Dashboards",
+      desc: "Admin panels, ERP systems, and CRM tools built for real workflows.",
+      icon: (
+        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+        </svg>
+      ),
+    },
+    {
+      title: "API & Integrations",
+      desc: "REST APIs, payment gateways, third-party integrations, and automation.",
+      icon: (
+        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+        </svg>
+      ),
+    },
   ];
 
   return (
     <section
       id="about"
-      className="min-h-screen flex items-center justify-center py-20 sm:py-16 px-4 sm:px-6 lg:px-8 bg-[#0a0a0f] relative overflow-hidden"
+      className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50 relative overflow-hidden"
     >
-      {/* Artistic Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 right-0 w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] bg-gradient-to-br from-purple-600/20 via-pink-600/10 to-transparent rounded-full blur-3xl opacity-30"></div>
-        <div className="absolute bottom-0 left-0 w-[250px] sm:w-[500px] h-[250px] sm:h-[500px] bg-gradient-to-tr from-blue-600/20 via-cyan-600/10 to-transparent rounded-full blur-3xl opacity-30"></div>
-        
-        {/* Subtle Grid Pattern */}
-        <div className="absolute inset-0 opacity-[0.02]" style={{
-          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
-          backgroundSize: '50px 50px'
-        }}></div>
-      </div>
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#DC2626] opacity-[0.03] rounded-full blur-[100px] pointer-events-none" />
 
       <RevealOnScroll>
-        <div className="max-w-[1300px] w-full mx-auto relative z-10">
-          {/* Art Book Style Header */}
-          <div className="mb-8 sm:mb-12 space-y-3 sm:space-y-4">
-            <div className="flex items-center gap-3 sm:gap-4">
-              <div className="h-[2px] w-8 sm:w-12 bg-gradient-to-r from-transparent via-purple-400 to-transparent"></div>
-              <span className="text-[10px] sm:text-xs font-bold tracking-[0.25em] sm:tracking-[0.3em] text-purple-300/80 uppercase">
-                About Me
-              </span>
-              <div className="h-[2px] flex-1 bg-gradient-to-r from-purple-400/50 via-pink-400/30 to-transparent"></div>
+        <div className="max-w-[1200px] mx-auto">
+
+          {/* ── Section header ── */}
+          <div className="mb-16">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="h-px w-8 bg-[#DC2626]" />
+              <span className="text-[11px] font-bold tracking-[0.25em] text-[#DC2626] uppercase">About Me</span>
             </div>
-            
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-none tracking-tight">
-              MERN Stack Developer
+            <h2 className="text-4xl sm:text-5xl font-black text-gray-900 leading-tight tracking-tight">
+              MERN Stack <span className="text-[#DC2626]">Developer</span>
             </h2>
-            
-            <p className="text-gray-400 text-sm sm:text-base lg:text-lg max-w-2xl leading-relaxed font-light">
-              Transforming ideas into scalable, high-performance digital experiences 
-              with passion and precision.
+            <p className="text-gray-500 mt-3 text-base max-w-xl leading-relaxed">
+              2+ years building production apps trusted by over 100,000 users. I turn ideas into robust, scalable systems.
             </p>
           </div>
 
-          {/* Bio Section - Art Book Style */}
-          <div className="mb-6 sm:mb-8 relative overflow-hidden rounded-xl sm:rounded-2xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-white/10 backdrop-blur-sm hover:border-white/20 transition-all duration-700 group">
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-50 group-hover:opacity-70 transition-opacity duration-700"></div>
-            
-            <div className="relative z-10 p-6 sm:p-8 lg:p-10">
-              <div className="flex items-start gap-4 sm:gap-6 mb-4 sm:mb-6">
-                <div className="flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 shadow-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 flex-shrink-0">
-                  <span className="text-2xl sm:text-3xl">👨‍💻</span>
+          {/* ── Bio + Services ── */}
+          <div className="grid lg:grid-cols-[380px_1fr] gap-8 mb-10">
+
+            {/* Bio card */}
+            <div className="bg-white rounded-2xl border border-gray-200 p-7 shadow-sm flex flex-col gap-6">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-2xl bg-[#DC2626] flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                  </svg>
                 </div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1 sm:mb-2">Who I Am</h3>
-                  <div className="h-[2px] w-16 sm:w-20 bg-gradient-to-r from-purple-400 to-pink-400 opacity-50"></div>
+                <div>
+                  <h3 className="font-bold text-gray-900">Rishi Kumar</h3>
+                  <p className="text-gray-400 text-sm">MERN Stack Developer</p>
                 </div>
               </div>
-              <p className="text-gray-300 text-sm sm:text-base lg:text-lg leading-relaxed">
-                A passionate and driven <span className="text-white font-bold">MERN Stack Developer</span> with expertise in crafting
-                innovative, scalable web applications. Currently pursuing my Master's degree while building production-grade systems 
-                that serve <span className="text-cyan-400 font-bold">100,000+ users</span>. 
-                Gaming isn't just a hobby—it's my lifestyle. <span className="text-green-400 font-bold">Coding is the ultimate game!</span> 🎮
+
+              <p className="text-gray-600 text-sm leading-relaxed">
+                A results-driven full-stack developer who transforms client ideas into polished, production-ready web applications. Currently pursuing my Master&apos;s while delivering systems trusted by <span className="text-[#DC2626] font-semibold">100,000+ users</span>.
               </p>
-            </div>
-            
-            <div className="absolute bottom-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-tl from-purple-500 to-pink-500 opacity-10 blur-3xl"></div>
-          </div>
 
-          {/* Skills Grid - Art Book Style */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-8">
-            {/* Frontend Skills */}
-            <div className="group relative overflow-hidden rounded-xl sm:rounded-2xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-white/10 backdrop-blur-sm hover:border-pink-400/30 transition-all duration-700">
-              <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 to-purple-500/5 opacity-50 group-hover:opacity-70 transition-opacity duration-700"></div>
-              
-              <div className="relative z-10 p-6 sm:p-8 lg:p-10">
-                <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-                  <div className="flex items-center justify-center w-10 h-10 sm:w-14 sm:h-14 rounded-lg sm:rounded-xl bg-gradient-to-br from-pink-500 to-purple-600 shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 flex-shrink-0">
-                    <svg className="w-5 h-5 sm:w-7 sm:h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z"/>
-                      <path d="M3 7v3c0 1.657 3.134 3 7 3s7-1.343 7-3V7c0 1.657-3.134 3-7 3S3 8.657 3 7z"/>
-                      <path d="M17 5c0 1.657-3.134 3-7 3S3 6.657 3 5s3.134-3 7-3 7 1.343 7 3z"/>
-                    </svg>
+              <div className="border-t border-gray-100 pt-5 grid grid-cols-2 gap-4">
+                {[
+                  { num: "100K+", label: "Users Served" },
+                  { num: "50+",   label: "Projects Shipped" },
+                  { num: "2+",    label: "Years Experience" },
+                  { num: "5+",    label: "Happy Clients" },
+                ].map(({ num, label }) => (
+                  <div key={label}>
+                    <div className="text-2xl font-black text-[#DC2626]">{num}</div>
+                    <div className="text-xs text-gray-400 mt-0.5 font-medium">{label}</div>
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-base sm:text-xl md:text-2xl font-bold text-white">Frontend Arsenal</h3>
-                    <p className="text-gray-400 text-xs sm:text-sm mt-0.5">UI/UX Implementation</p>
-                  </div>
-                </div>
-                <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                  {frontendSkills.map((skill, idx) => (
-                    <div
-                      key={idx}
-                      className={`bg-gradient-to-r ${skill.color} p-[1.5px] rounded-lg hover:scale-105 transition-all duration-300 cursor-pointer`}
-                    >
-                      <div className="bg-[#0a0a0f] rounded-lg px-2.5 py-1.5 sm:px-4 sm:py-2.5 flex items-center gap-1.5 sm:gap-2 hover:bg-opacity-70 transition-all duration-300">
-                        <span className="text-base sm:text-xl">{skill.icon}</span>
-                        <span className="text-white font-semibold text-xs sm:text-sm">{skill.name}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                ))}
               </div>
-              
-              <div className="absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br from-pink-500 to-purple-500 opacity-10 blur-3xl"></div>
-            </div>
 
-            {/* Backend Skills */}
-            <div className="group relative overflow-hidden rounded-xl sm:rounded-2xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-white/10 backdrop-blur-sm hover:border-cyan-400/30 transition-all duration-700">
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 opacity-50 group-hover:opacity-70 transition-opacity duration-700"></div>
-              
-              <div className="relative z-10 p-6 sm:p-8 lg:p-10">
-                <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-                  <div className="flex items-center justify-center w-10 h-10 sm:w-14 sm:h-14 rounded-lg sm:rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 flex-shrink-0">
-                    <svg className="w-5 h-5 sm:w-7 sm:h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm3.293 1.293a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L7.586 10 5.293 7.707a1 1 0 010-1.414zM11 12a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd"/>
-                    </svg>
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-base sm:text-xl md:text-2xl font-bold text-white">Backend Power</h3>
-                    <p className="text-gray-400 text-xs sm:text-sm mt-0.5">Server & Database</p>
-                  </div>
-                </div>
-                <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                  {backendSkills.map((skill, idx) => (
-                    <div
-                      key={idx}
-                      className={`bg-gradient-to-r ${skill.color} p-[1.5px] rounded-lg hover:scale-105 transition-all duration-300 cursor-pointer`}
-                    >
-                      <div className="bg-[#0a0a0f] rounded-lg px-2.5 py-1.5 sm:px-4 sm:py-2.5 flex items-center gap-1.5 sm:gap-2 hover:bg-opacity-70 transition-all duration-300">
-                        <span className="text-base sm:text-xl">{skill.icon}</span>
-                        <span className="text-white font-semibold text-xs sm:text-sm">{skill.name}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              
-              <div className="absolute bottom-0 left-0 w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-tl from-cyan-500 to-blue-500 opacity-10 blur-3xl"></div>
-            </div>
-          </div>
-
-          {/* Experience Grid - Art Book Style */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-8">
-            {/* Education */}
-            <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-white/10 backdrop-blur-sm hover:border-purple-400/30 transition-all duration-700">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-50 group-hover:opacity-70 transition-opacity duration-700"></div>
-              
-              <div className="relative z-10 p-8 lg:p-10">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-pink-600 shadow-xl group-hover:scale-110 transition-transform duration-500">
-                    <span className="text-3xl">🎓</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-white">Education</h3>
-                    <p className="text-gray-400 text-sm mt-0.5">Academic Journey</p>
-                  </div>
-                </div>
-                <div className="space-y-4">
-                  {/* M.E. */}
-                  <div className="flex items-start gap-3 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-purple-400/30 hover:bg-white/10 transition-all duration-300">
-                    <div className="mt-1.5 w-2 h-2 rounded-full bg-purple-500 flex-shrink-0 shadow-[0_0_8px_rgba(168,85,247,0.8)]"></div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-start justify-between flex-wrap gap-2 mb-1">
-                        <h4 className="text-sm sm:text-base font-bold text-white leading-tight">
-                          M.E. in Computer Science
-                        </h4>
-                        <span className="px-2.5 py-1 rounded-full bg-purple-500/20 text-purple-300 text-xs font-bold border border-purple-400/30 whitespace-nowrap">
-                          In Progress
-                        </span>
-                      </div>
-                      <p className="text-gray-300 text-sm font-semibold mb-1">Knowledge Institute of Technology</p>
-                      <p className="text-purple-400 text-sm font-medium">2024 – 2026</p>
-                    </div>
-                  </div>
-
-                  {/* B.E. */}
-                  <div className="flex items-start gap-3 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-purple-400/30 hover:bg-white/10 transition-all duration-300">
-                    <div className="mt-1.5 w-2 h-2 rounded-full bg-purple-400 flex-shrink-0 shadow-[0_0_8px_rgba(168,85,247,0.6)]"></div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-start justify-between flex-wrap gap-2 mb-1">
-                        <h4 className="text-sm sm:text-base font-bold text-white leading-tight">
-                          B.E. in Computer Science
-                        </h4>
-                        <span className="px-2.5 py-1 rounded-full bg-green-500/20 text-green-300 text-xs font-bold border border-green-400/30 whitespace-nowrap">
-                          Completed
-                        </span>
-                      </div>
-                      <p className="text-gray-300 text-sm font-semibold mb-1">KCG College of Technology</p>
-                      <p className="text-purple-400 text-sm font-medium">2019 – 2023</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="absolute top-0 left-0 w-28 h-28 bg-gradient-to-br from-purple-500 to-pink-500 opacity-10 blur-3xl"></div>
-            </div>
-
-            {/* Work Experience */}
-            <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-white/10 backdrop-blur-sm hover:border-green-400/30 transition-all duration-700">
-              <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-50 group-hover:opacity-70 transition-opacity duration-700"></div>
-              
-              <div className="relative z-10 p-8 lg:p-10">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 shadow-xl group-hover:scale-110 transition-transform duration-500">
-                    <span className="text-3xl">💼</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-white">Work Experience</h3>
-                    <p className="text-gray-400 text-sm mt-0.5">Professional Career</p>
-                  </div>
-                </div>
-                <div className="space-y-4">
-                  <div className="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-green-400/30 hover:bg-white/10 transition-all duration-300">
-                    <div className="flex items-start justify-between flex-wrap gap-2 mb-2">
-                      <h4 className="text-sm sm:text-base font-bold text-white leading-tight">
-                        Tech Analyst
-                      </h4>
-                      <span className="px-2.5 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-bold border border-blue-400/30 whitespace-nowrap">
-                        Current
-                      </span>
-                    </div>
-                    <p className="text-gray-300 text-sm font-semibold mb-1">SRM Institute of Science and Technology</p>
-                    <p className="text-green-400 text-sm font-medium mb-3">2024 – Present</p>
-                    <ul className="space-y-2">
-                      <li className="flex items-start gap-2 text-gray-400 text-sm">
-                        <svg className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                        </svg>
-                        <span>Built feedback system for <strong className="text-white">100K+ users</strong></span>
-                      </li>
-                      <li className="flex items-start gap-2 text-gray-400 text-sm">
-                        <svg className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                        </svg>
-                        <span>Implemented <strong className="text-white">OAuth</strong> & <strong className="text-white">REST APIs</strong></span>
-                      </li>
-                      <li className="flex items-start gap-2 text-gray-400 text-sm">
-                        <svg className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                        </svg>
-                        <span>Created dashboards with <strong className="text-white">Git/GitLab</strong></span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="absolute bottom-0 right-0 w-28 h-28 bg-gradient-to-tl from-green-500 to-emerald-500 opacity-10 blur-3xl"></div>
-            </div>
-          </div>
-
-          {/* Stats Section - Compact Art Book Style */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
-            {[
-              { number: "100K+", label: "Users Served", icon: "👥", gradient: "from-blue-500 to-cyan-500" },
-              { number: "50+", label: "Projects Built", icon: "🚀", gradient: "from-purple-500 to-pink-500" },
-              { number: "11", label: "Tech Stack", icon: "⚡", gradient: "from-orange-500 to-red-500" },
-              { number: "2+", label: "Years Exp.", icon: "💻", gradient: "from-green-500 to-emerald-500" }
-            ].map((stat, idx) => (
-              <div
-                key={idx}
-                className="group relative text-center p-4 sm:p-6 rounded-xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-white/10 hover:border-white/20 hover:bg-white/[0.12] transition-all duration-500 hover:scale-105 cursor-pointer overflow-hidden"
+              <a
+                href="#contact"
+                className="mt-auto flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#DC2626] text-white text-sm font-bold hover:bg-[#B91C1C] transition-colors duration-200 shadow-[0_4px_12px_rgba(220,38,38,0.25)]"
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
-                
-                <div className="relative z-10">
-                  <div className="text-2xl sm:text-3xl md:text-4xl mb-1 sm:mb-2 group-hover:scale-110 transition-transform duration-500">
-                    {stat.icon}
+                Book a Free Consultation
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+
+            {/* Services grid */}
+            <div>
+              <p className="text-xs font-bold tracking-[0.2em] text-gray-400 uppercase mb-5">What I Build for You</p>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {services.map((s, i) => (
+                  <div
+                    key={i}
+                    className="group p-5 rounded-xl bg-white border border-gray-200 hover:border-[#DC2626]/30 hover:shadow-md transition-all duration-300 relative overflow-hidden"
+                  >
+                    <div className="w-9 h-9 rounded-lg bg-[#DC2626] flex items-center justify-center mb-3 group-hover:scale-105 transition-transform duration-200">
+                      {s.icon}
+                    </div>
+                    <h4 className="font-bold text-gray-900 text-sm mb-1.5">{s.title}</h4>
+                    <p className="text-gray-500 text-xs leading-relaxed">{s.desc}</p>
+                    <div className="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full bg-[#DC2626] transition-all duration-400 rounded-b-xl" />
                   </div>
-                  <div className={`text-xl sm:text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${stat.gradient} mb-0.5 sm:mb-1`}>
-                    {stat.number}
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* ── Skills ── */}
+          <div className="grid sm:grid-cols-2 gap-5 mb-8">
+            {[
+              {
+                label: "Frontend",
+                sub: "UI / UX Implementation",
+                skills: frontendSkills,
+                icon: (
+                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                ),
+              },
+              {
+                label: "Backend",
+                sub: "Server & Database",
+                skills: backendSkills,
+                icon: (
+                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm3.293 1.293a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L7.586 10 5.293 7.707a1 1 0 010-1.414zM11 12a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd" />
+                  </svg>
+                ),
+              },
+            ].map(({ label, sub, skills, icon }) => (
+              <div key={label} className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-9 h-9 rounded-lg bg-[#DC2626] flex items-center justify-center flex-shrink-0">
+                    {icon}
                   </div>
-                  <div className="text-gray-400 text-[10px] sm:text-xs md:text-sm font-medium leading-tight">{stat.label}</div>
+                  <div>
+                    <h3 className="font-bold text-gray-900 text-sm">{label} Stack</h3>
+                    <p className="text-gray-400 text-xs mt-0.5">{sub}</p>
+                  </div>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {skills.map((sk) => (
+                    <span
+                      key={sk}
+                      className="px-3 py-1.5 rounded-lg bg-gray-50 border border-gray-200 text-gray-700 text-xs font-medium hover:border-[#DC2626]/40 hover:text-[#DC2626] hover:bg-red-50 transition-all duration-200 cursor-default"
+                    >
+                      {sk}
+                    </span>
+                  ))}
                 </div>
               </div>
             ))}
           </div>
+
+          {/* ── Education + Experience ── */}
+          <div className="grid sm:grid-cols-2 gap-5">
+
+            {/* Education */}
+            <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-9 h-9 rounded-lg bg-[#DC2626] flex items-center justify-center flex-shrink-0">
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900 text-sm">Education</h3>
+                  <p className="text-gray-400 text-xs mt-0.5">Academic Journey</p>
+                </div>
+              </div>
+              <div className="space-y-3">
+                {[
+                  {
+                    degree: "M.E. in Computer Science",
+                    school: "Knowledge Institute of Technology",
+                    year: "2024 – 2026",
+                    badge: { text: "In Progress", cls: "bg-red-50 text-[#DC2626] border-[#DC2626]/20" },
+                  },
+                  {
+                    degree: "B.E. in Computer Science",
+                    school: "KCG College of Technology",
+                    year: "2019 – 2023",
+                    badge: { text: "Completed", cls: "bg-green-50 text-green-700 border-green-200" },
+                  },
+                ].map(({ degree, school, year, badge }) => (
+                  <div key={degree} className="p-4 rounded-xl bg-gray-50 border border-gray-100">
+                    <div className="flex items-start justify-between gap-2 flex-wrap mb-1">
+                      <h4 className="text-sm font-semibold text-gray-900">{degree}</h4>
+                      <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold border ${badge.cls}`}>{badge.text}</span>
+                    </div>
+                    <p className="text-gray-500 text-xs font-medium">{school}</p>
+                    <p className="text-gray-400 text-xs mt-0.5">{year}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Experience */}
+            <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-9 h-9 rounded-lg bg-[#DC2626] flex items-center justify-center flex-shrink-0">
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900 text-sm">Work Experience</h3>
+                  <p className="text-gray-400 text-xs mt-0.5">Professional Career</p>
+                </div>
+              </div>
+              <div className="p-4 rounded-xl bg-gray-50 border border-gray-100">
+                <div className="flex items-start justify-between gap-2 flex-wrap mb-2">
+                  <h4 className="text-sm font-semibold text-gray-900">Tech Analyst</h4>
+                  <span className="px-2 py-0.5 rounded-full bg-red-50 text-[#DC2626] text-[10px] font-bold border border-[#DC2626]/20">Current</span>
+                </div>
+                <p className="text-gray-500 text-xs font-medium">SRM Institute of Science and Technology</p>
+                <p className="text-[#DC2626] text-xs mt-0.5 font-medium">2024 – Present</p>
+                <ul className="mt-3 space-y-2">
+                  {[
+                    "Built feedback system for 100K+ users",
+                    "Implemented OAuth & REST APIs",
+                    "Created dashboards with Git/GitLab",
+                  ].map((pt) => (
+                    <li key={pt} className="flex items-start gap-2 text-gray-500 text-xs">
+                      <svg className="w-3.5 h-3.5 text-[#DC2626] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                      {pt}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
         </div>
       </RevealOnScroll>
     </section>

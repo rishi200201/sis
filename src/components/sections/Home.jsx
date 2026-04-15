@@ -1,232 +1,212 @@
 import { RevealOnScroll } from "../RevealOnScroll";
 
-export const Home = () => {
+export const Home = ({ onResumeOpen }) => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-[#0a0a0f] py-20 sm:py-16 px-4 sm:px-6 lg:px-8"
+      className="min-h-screen flex items-center bg-white relative overflow-hidden pt-20 pb-20 px-4 sm:px-6 lg:px-8"
     >
-      {/* Artistic Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-0 w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] bg-gradient-to-br from-blue-600/20 via-cyan-600/10 to-transparent rounded-full blur-3xl opacity-30"></div>
-        <div className="absolute bottom-0 right-0 w-[250px] sm:w-[500px] h-[250px] sm:h-[500px] bg-gradient-to-tl from-purple-600/20 via-pink-600/10 to-transparent rounded-full blur-3xl opacity-30"></div>
-        
-        {/* Subtle Grid Pattern */}
-        <div className="absolute inset-0 opacity-[0.02]" style={{
-          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
-          backgroundSize: '50px 50px'
-        }}></div>
-        
-        {/* Floating Particles */}
-        <div className="absolute top-20 left-20 w-1.5 h-1.5 bg-blue-400/30 rounded-full animate-pulse"></div>
-        <div className="absolute top-40 right-32 w-1.5 h-1.5 bg-purple-400/30 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-        <div className="absolute bottom-32 left-40 w-1.5 h-1.5 bg-cyan-400/30 rounded-full animate-pulse" style={{ animationDelay: '1.5s' }}></div>
-        <div className="absolute bottom-20 right-20 w-1.5 h-1.5 bg-pink-400/30 rounded-full animate-pulse" style={{ animationDelay: '2.5s' }}></div>
-      </div>
+      {/* Dot grid */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: "radial-gradient(circle, rgba(0,0,0,0.045) 1px, transparent 1px)",
+          backgroundSize: "24px 24px",
+        }}
+      />
+      {/* Ambient glow */}
+      <div className="absolute -top-40 right-0 w-[600px] h-[600px] bg-[#DC2626] opacity-[0.04] rounded-full blur-[140px] pointer-events-none" />
 
       <RevealOnScroll>
-        <div className="max-w-[1300px] mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Side - Text Content */}
-            <div className="text-center lg:text-left space-y-6">
-              {/* Status Badge */}
-              <div className="inline-block animate-fade-in">
-                <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm hover:border-green-400/30 transition-all duration-300">
-                  <span className="relative flex h-2.5 w-2.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
-                  </span>
-                  <span className="text-sm font-semibold text-gray-300 tracking-wide">Available for opportunities</span>
+        <div className="max-w-[1160px] mx-auto w-full relative z-10">
+          <div className="grid lg:grid-cols-[1fr_1fr] gap-12 xl:gap-20 items-center">
+
+            {/* ── LEFT ── */}
+            <div className="flex flex-col gap-7">
+
+              {/* Availability badge */}
+              <div className="inline-flex self-start items-center gap-2.5 px-4 py-2 rounded-full bg-red-50 border border-[#DC2626]/20">
+                <span className="relative flex h-2 w-2 flex-shrink-0">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#DC2626] opacity-60" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#DC2626]" />
+                </span>
+                <span className="text-[#DC2626] text-xs font-semibold tracking-wide">Available for Freelance</span>
+              </div>
+
+              {/* Name block */}
+              <div>
+                <p className="text-gray-400 text-[11px] font-bold tracking-[0.25em] uppercase mb-3">Hi, I&apos;m</p>
+                <h1
+                  className="font-black leading-[0.95] tracking-tight text-gray-900"
+                  style={{ fontSize: "clamp(3.2rem, 8vw, 5.5rem)" }}
+                >
+                  Rishi<br />
+                  <span className="text-[#DC2626]">Kumar</span>
+                </h1>
+                <div className="flex items-center gap-2 mt-4">
+                  <div className="h-[3px] w-12 bg-[#DC2626] rounded-full" />
+                  <div className="h-[3px] w-4 bg-[#DC2626]/25 rounded-full" />
                 </div>
               </div>
 
-              {/* Main Title - Art Book Style */}
-              <div className="space-y-3">
-                <p className="text-sm sm:text-base md:text-lg text-gray-400 font-light tracking-wide">
-                  Hi, I'm
-                </p>
-                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-none tracking-tight">
-                  <span className="block text-white mb-2">Rishi</span>
-                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400">Kumar</span>
-                </h1>
-              </div>
-
-              {/* Role Title */}
-              <div className="space-y-2">
-                <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white">
+              {/* Role + stack */}
+              <div>
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-800 tracking-tight leading-snug">
                   MERN Stack Developer
                 </h2>
-                <div className="h-[2px] w-16 sm:w-24 bg-gradient-to-r from-blue-400 to-cyan-400 opacity-50 mx-auto lg:mx-0"></div>
+                <p className="text-gray-400 text-sm mt-1 font-medium">
+                  React · Node.js · MongoDB · Express
+                </p>
               </div>
 
-              {/* Description */}
-              <p className="text-gray-400 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
-                <span className="text-white font-semibold">Crafting code, creating possibilities.</span> 💡💻
-                <br />
-                <span className="font-light">Building scalable applications that serve </span>
-                <span className="text-cyan-400 font-bold">100K+ users</span>
-                <span className="font-light"> with precision and passion.</span>
+              {/* Bio */}
+              <p className="text-gray-500 text-base leading-relaxed max-w-[420px]">
+                I build web products clients love — fast, scalable MERN stack applications delivered on time, every time.
               </p>
 
-              {/* CTA Buttons - Art Book Style */}
-              <div className="flex flex-col sm:flex-row justify-center lg:justify-start items-stretch sm:items-center gap-3 sm:gap-4 pt-4">
+              {/* CTAs */}
+              <div className="flex flex-wrap items-center gap-3">
                 <a
                   href="#projects"
-                  className="group/btn inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-white text-black text-xs sm:text-sm font-bold uppercase tracking-wider hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-500 hover:text-white shadow-xl hover:shadow-2xl hover:shadow-blue-500/50 transform hover:scale-105 transition-all duration-500 focus:outline-none focus:ring-2 focus:ring-white/50"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#DC2626] text-white text-sm font-bold hover:bg-[#B91C1C] transition-colors duration-200 shadow-[0_4px_18px_rgba(220,38,38,0.28)]"
                 >
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M2 6a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zm2 0v8h12V6H4zm2 2a1 1 0 000 2h8a1 1 0 100-2H6z"/>
-                  </svg>
-                  <span>View Projects</span>
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover/btn:translate-x-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  View Projects
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </a>
-
                 <a
                   href="#contact"
-                  className="group inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-white/5 border border-white/10 text-white text-xs sm:text-sm font-bold uppercase tracking-wider hover:border-cyan-400/50 hover:bg-cyan-500/10 backdrop-blur-sm transition-all duration-300 hover:scale-105"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-[#DC2626] text-[#DC2626] text-sm font-bold hover:bg-[#DC2626] hover:text-white transition-all duration-200"
                 >
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                   </svg>
-                  <span>Get In Touch</span>
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
+                  Hire Me
                 </a>
+                <button
+                  onClick={onResumeOpen}
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-gray-200 text-gray-600 text-sm font-semibold hover:border-[#DC2626] hover:text-[#DC2626] transition-all duration-200"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                  </svg>
+                  View Resume
+                </button>
+              </div>
+
+              {/* Stats */}
+              <div className="flex items-center gap-8 pt-5 border-t border-gray-100">
+                {[
+                  { num: "2+",    label: "Years Exp." },
+                  { num: "50+",   label: "Projects" },
+                  { num: "100K+", label: "Users Served" },
+                ].map(({ num, label }) => (
+                  <div key={label}>
+                    <div className="text-[1.6rem] font-black text-gray-900 leading-none">{num}</div>
+                    <div className="text-xs text-gray-400 mt-1 font-medium">{label}</div>
+                  </div>
+                ))}
               </div>
             </div>
 
-            {/* Right Side - Modern Code Card */}
-            <div className="relative group mt-8 lg:mt-0">
-              {/* Main Code Card - Art Book Style */}
-              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-white/10 backdrop-blur-sm hover:border-white/20 transition-all duration-700 shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 opacity-50 group-hover:opacity-70 transition-opacity duration-700"></div>
-                
-                {/* Browser Bar */}
-                <div className="relative z-10 bg-white/5 px-3 sm:px-4 py-2 sm:py-3 flex items-center gap-2 sm:gap-3 border-b border-white/10">
-                  <div className="flex gap-1.5 sm:gap-2">
-                    <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-400/70 hover:bg-red-400 transition-colors"></div>
-                    <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-yellow-400/70 hover:bg-yellow-400 transition-colors"></div>
-                    <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-400/70 hover:bg-green-400 transition-colors"></div>
-                  </div>
-                  <div className="flex-1 bg-white/5 rounded-lg px-2 sm:px-3 py-1 sm:py-1.5 text-[10px] sm:text-xs text-gray-400 flex items-center gap-1 sm:gap-2 overflow-hidden">
-                    <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd"/>
-                    </svg>
-                    <span className="truncate">rishi-portfolio.dev</span>
-                  </div>
+            {/* ── RIGHT: Code card ── */}
+            <div className="relative lg:justify-self-end w-full max-w-[520px] mx-auto lg:mx-0">
+              <div className="relative overflow-visible">
+                {/* Hiring badge — outside card, above-right corner */}
+                <div className="absolute -top-3.5 -right-3.5 z-20 px-3 py-1.5 bg-[#DC2626] text-white text-[10px] font-black uppercase tracking-widest rounded-lg shadow-lg rotate-2 select-none">
+                  Hiring Open
                 </div>
 
-                {/* Code Editor */}
-                <div className="relative z-10 bg-[#0d1117] p-4 sm:p-6 md:p-8 font-mono text-[10px] sm:text-xs md:text-sm min-h-[280px] sm:min-h-[350px]">
-                  <div className="space-y-2">
-                    <div className="flex gap-4">
-                      <span className="text-gray-600 select-none w-6 text-right">1</span>
-                      <span className="text-purple-400">const</span>
-                      <span className="text-blue-300 ml-2">developer</span>
-                      <span className="text-white ml-2">=</span>
-                      <span className="text-white ml-2">{'{'}</span>
+                <div className="overflow-hidden rounded-2xl bg-gray-950 border border-gray-800 shadow-[0_24px_64px_rgba(0,0,0,0.22)]">
+                  {/* Titlebar */}
+                  <div className="flex items-center gap-2 px-4 py-3 bg-black/40 border-b border-white/[0.06]">
+                    <div className="flex gap-1.5 flex-shrink-0">
+                      <span className="w-3 h-3 rounded-full bg-[#FF5F57]" />
+                      <span className="w-3 h-3 rounded-full bg-[#FEBC2E]" />
+                      <span className="w-3 h-3 rounded-full bg-[#28C840]" />
                     </div>
-                    <div className="flex gap-4 pl-6">
-                      <span className="text-gray-600 select-none w-6 text-right">2</span>
-                      <span className="text-blue-300">name:</span>
-                      <span className="text-orange-400 ml-2">"Rishi Kumar"</span>
-                      <span className="text-white">,</span>
+                    <div className="flex-1 mx-3 bg-white/[0.06] rounded px-3 py-0.5 text-[11px] text-gray-400 font-mono text-center truncate">
+                      developer.js
                     </div>
-                    <div className="flex gap-4 pl-6">
-                      <span className="text-gray-600 select-none w-6 text-right">3</span>
-                      <span className="text-blue-300">role:</span>
-                      <span className="text-orange-400 ml-2">"MERN Stack Developer"</span>
-                      <span className="text-white">,</span>
-                    </div>
-                    <div className="flex gap-4 pl-6">
-                      <span className="text-gray-600 select-none w-6 text-right">4</span>
-                      <span className="text-blue-300">skills:</span>
-                      <span className="text-white ml-2">[</span>
-                    </div>
-                    <div className="flex gap-4 pl-12 animate-pulse">
-                      <span className="text-gray-600 select-none w-6 text-right">5</span>
-                      <div className="flex gap-2 flex-wrap">
-                        <span className="text-orange-400">"React"</span>
-                        <span className="text-white">,</span>
-                        <span className="text-orange-400">"Node.js"</span>
-                        <span className="text-white">,</span>
-                        <span className="text-orange-400">"MongoDB"</span>
-                      </div>
-                    </div>
-                    <div className="flex gap-4 pl-6">
-                      <span className="text-gray-600 select-none w-6 text-right">6</span>
-                      <span className="text-white">],</span>
-                    </div>
-                    <div className="flex gap-4 pl-6">
-                      <span className="text-gray-600 select-none w-6 text-right">7</span>
-                      <span className="text-blue-300">experience:</span>
-                      <span className="text-green-400 ml-2">"2+ years"</span>
-                      <span className="text-white">,</span>
-                    </div>
-                    <div className="flex gap-4 pl-6">
-                      <span className="text-gray-600 select-none w-6 text-right">8</span>
-                      <span className="text-blue-300">passionate:</span>
-                      <span className="text-green-400 ml-2">true</span>
-                      <span className="text-white">,</span>
-                    </div>
-                    <div className="flex gap-4 pl-6">
-                      <span className="text-gray-600 select-none w-6 text-right">9</span>
-                      <span className="text-purple-400">build</span>
-                      <span className="text-yellow-300">:</span>
-                      <span className="text-white ml-2">() ={'>'}</span>
-                      <span className="text-orange-400 ml-2">"Amazing Apps"</span>
-                    </div>
-                    <div className="flex gap-4">
-                      <span className="text-gray-600 select-none w-6 text-right">10</span>
-                      <span className="text-white">{'}'}</span>
-                    </div>
-                    <div className="flex gap-4 mt-3">
-                      <span className="text-gray-600 select-none w-6 text-right">11</span>
-                      <span className="text-gray-500">// Let's build something awesome! 🚀</span>
-                    </div>
-                    
-                    {/* Blinking Cursor */}
-                    <div className="flex gap-4">
-                      <span className="text-gray-600 select-none w-6 text-right">12</span>
-                      <span className="inline-block w-2 h-4 bg-cyan-400 animate-blink"></span>
+                    <div className="flex items-center gap-1.5 flex-shrink-0">
+                      <span className="relative flex h-1.5 w-1.5">
+                        <span className="animate-ping absolute h-full w-full rounded-full bg-[#DC2626] opacity-60" />
+                        <span className="relative h-1.5 w-1.5 rounded-full bg-[#DC2626]" />
+                      </span>
+                      <span className="text-[10px] text-gray-500 font-mono">live</span>
                     </div>
                   </div>
-                </div>
 
-                {/* Corner Accent */}
-                <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-blue-500 to-cyan-500 opacity-10 blur-3xl"></div>
-              </div>
+                  {/* Code */}
+                  <div className="p-6 font-mono text-[12.5px] leading-[1.85] select-none overflow-x-auto" style={{ fontFamily: "'Fira Code', 'JetBrains Mono', monospace" }}>
+                    <div>
+                      <span className="text-purple-400">const</span>{" "}
+                      <span className="text-blue-300">developer</span>{" "}
+                      <span className="text-gray-200">= {"{"}</span>
+                    </div>
+                    <div className="pl-5">
+                      <span className="text-[#f87171]">name</span>
+                      <span className="text-gray-300">: </span>
+                      <span className="text-amber-300">&quot;Rishi Kumar&quot;</span>
+                      <span className="text-gray-500">,</span>
+                    </div>
+                    <div className="pl-5">
+                      <span className="text-[#f87171]">role</span>
+                      <span className="text-gray-300">: </span>
+                      <span className="text-amber-300">&quot;MERN Stack Developer&quot;</span>
+                      <span className="text-gray-500">,</span>
+                    </div>
+                    <div className="pl-5">
+                      <span className="text-[#f87171]">stack</span>
+                      <span className="text-gray-300">: [</span>
+                      <span className="text-amber-300">&quot;React&quot;</span>
+                      <span className="text-gray-500">, </span>
+                      <span className="text-amber-300">&quot;Node.js&quot;</span>
+                      <span className="text-gray-500">,</span>
+                    </div>
+                    <div className="pl-12">
+                      <span className="text-amber-300">&quot;MongoDB&quot;</span>
+                      <span className="text-gray-500">, </span>
+                      <span className="text-amber-300">&quot;Express&quot;</span>
+                      <span className="text-gray-500">],</span>
+                    </div>
+                    <div className="pl-5">
+                      <span className="text-[#f87171]">experience</span>
+                      <span className="text-gray-300">: </span>
+                      <span className="text-green-400">&quot;2+ years&quot;</span>
+                      <span className="text-gray-500">,</span>
+                    </div>
+                    <div className="pl-5">
+                      <span className="text-[#f87171]">available</span>
+                      <span className="text-gray-300">: </span>
+                      <span className="text-[#f87171] font-semibold">true</span>
+                      <span className="text-gray-500">,</span>
+                    </div>
+                    <div className="pl-5 truncate">
+                      <span className="text-[#f87171]">email</span>
+                      <span className="text-gray-300">: </span>
+                      <span className="text-amber-300 text-[11px]">&quot;rishi20020107@gmail.com&quot;</span>
+                    </div>
+                    <div className="text-gray-200">{"}"}</div>
+                    <div className="mt-2.5 text-gray-600 text-[11px]">&#47;&#47; Let&apos;s build something great together</div>
+                    <div className="mt-1">
+                      <span className="inline-block w-[7px] h-[17px] bg-[#DC2626] animate-blink rounded-[1px]" />
+                    </div>
+                  </div>
 
-              {/* Floating Tech Icons - Cleaner Design - Hidden on mobile */}
-              <div className="hidden md:block absolute -top-6 -left-6 animate-float" style={{ animationDelay: '0s', animationDuration: '3s' }}>
-                <div className="bg-white/10 p-2.5 md:p-3 rounded-xl border border-blue-400/30 backdrop-blur-sm shadow-lg hover:scale-110 transition-transform duration-300">
-                  <svg className="w-5 h-5 md:w-6 md:h-6 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"/>
-                  </svg>
-                </div>
-              </div>
-              
-              <div className="hidden md:block absolute top-1/3 -right-6 animate-float" style={{ animationDelay: '1s', animationDuration: '3s' }}>
-                <div className="bg-white/10 p-2.5 md:p-3 rounded-xl border border-green-400/30 backdrop-blur-sm shadow-lg hover:scale-110 transition-transform duration-300">
-                  <svg className="w-5 h-5 md:w-6 md:h-6 text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                  </svg>
-                </div>
-              </div>
-
-              <div className="hidden md:block absolute -bottom-4 -left-4 animate-float" style={{ animationDelay: '2s', animationDuration: '3s' }}>
-                <div className="bg-white/10 p-2.5 md:p-3 rounded-xl border border-purple-400/30 backdrop-blur-sm shadow-lg hover:scale-110 transition-transform duration-300">
-                  <svg className="w-5 h-5 md:w-6 md:h-6 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M13 7H7v6h6V7z"/>
-                    <path fillRule="evenodd" d="M7 2a1 1 0 012 0v1h2V2a1 1 0 112 0v1h2a2 2 0 012 2v2h1a1 1 0 110 2h-1v2h1a1 1 0 110 2h-1v2a2 2 0 01-2 2h-2v1a1 1 0 11-2 0v-1H9v1a1 1 0 11-2 0v-1H5a2 2 0 01-2-2v-2H2a1 1 0 110-2h1V9H2a1 1 0 010-2h1V5a2 2 0 012-2h2V2zM5 5h10v10H5V5z" clipRule="evenodd"/>
-                  </svg>
+                  {/* Tech badges */}
+                  <div className="flex items-center gap-2 px-6 py-3 border-t border-white/[0.06] bg-black/20 flex-wrap">
+                    {["React", "Node.js", "MongoDB", "Express", "Tailwind"].map((tech) => (
+                      <span key={tech} className="px-2 py-0.5 rounded bg-white/[0.07] text-gray-400 text-[10px] font-mono border border-white/[0.04]">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </RevealOnScroll>

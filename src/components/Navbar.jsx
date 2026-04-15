@@ -1,88 +1,104 @@
 import { useEffect, useState } from "react";
 
-export const Navbar = ({ menuOpen, setMenuOpen }) => {
+const NAV_LINKS = [
+  { name: "Home",     href: "#home" },
+  { name: "About",    href: "#about" },
+  { name: "Projects", href: "#projects" },
+  { name: "Contact",  href: "#contact" },
+];
+
+export const Navbar = ({ menuOpen, setMenuOpen, onResumeOpen }) => {
   const [scrolled, setScrolled] = useState(false);
+  const [active, setActive]     = useState("home");
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
 
   useEffect(() => {
-    const handleScroll = () => {
+    const onScroll = () => {
       setScrolled(window.scrollY > 20);
+      const sections = ["home", "about", "projects", "contact"];
+      for (const id of [...sections].reverse()) {
+        const el = document.getElementById(id);
+        if (el && window.scrollY >= el.offsetTop - 120) { setActive(id); break; }
+      }
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <nav
       className={`fixed top-0 w-full z-40 transition-all duration-300 ${
         scrolled
-          ? "bg-[rgba(10, 10, 10, 0.95)] backdrop-blur-xl shadow-2xl"
-          : "bg-[rgba(10, 10, 10, 0.7)] backdrop-blur-lg"
-      } border-b border-white/10`}
+          ? "bg-white shadow-[0_1px_24px_rgba(0,0,0,0.08)] border-b border-gray-100"
+          : "bg-white/90 backdrop-blur-xl border-b border-gray-100/60"
+      }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          {/* Logo with gradient effect */}
-          <a
-            href="#home"
-            className="group font-mono text-2xl font-bold text-white tracking-tight hover:scale-105 transition-transform duration-300"
-          >
-            <span className="relative">
-              Rishi
-              <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent ml-1">
-                Portfolio
-              </span>
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300"></span>
-            </span>
+        <div className="flex justify-between items-center h-[70px]">
+
+          {/* ── Logo ── */}
+          <a href="#home" className="flex items-center gap-2 group">
+            <div className="w-8 h-8 rounded-lg bg-[#DC2626] flex items-center justify-center flex-shrink-0 group-hover:bg-[#B91C1C] transition-colors duration-300">
+              <span className="font-black text-white text-sm font-mono leading-none">rk</span>
+            </div>
+            <div>
+              <span className="font-black text-gray-900 text-lg tracking-tight leading-none">Rishi</span>
+              <span className="font-black text-[#DC2626] text-lg tracking-tight leading-none"> Kumar</span>
+            </div>
           </a>
 
-          {/* Hamburger Menu - Mobile */}
+          {/* ── Hamburger — Mobile ── */}
           <button
-            className="md:hidden w-10 h-10 relative cursor-pointer z-40 flex items-center justify-center text-white hover:text-blue-400 transition-colors duration-300"
-            onClick={() => setMenuOpen((prev) => !prev)}
+            className="md:hidden w-10 h-10 flex items-center justify-center text-gray-600 hover:text-[#DC2626] transition-colors duration-300 z-40"
+            onClick={() => setMenuOpen((p) => !p)}
             aria-label="Toggle menu"
           >
             <div className="space-y-1.5">
-              <span
-                className={`block w-6 h-0.5 bg-current transition-all duration-300 ${
-                  menuOpen ? "rotate-45 translate-y-2" : ""
-                }`}
-              ></span>
-              <span
-                className={`block w-6 h-0.5 bg-current transition-all duration-300 ${
-                  menuOpen ? "opacity-0" : ""
-                }`}
-              ></span>
-              <span
-                className={`block w-6 h-0.5 bg-current transition-all duration-300 ${
-                  menuOpen ? "-rotate-45 -translate-y-2" : ""
-                }`}
-              ></span>
+              <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
+              <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
+              <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
             </div>
           </button>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
-            {[
-              { name: "Home", href: "#home" },
-              { name: "About", href: "#about" },
-              { name: "Projects", href: "#projects" },
-              { name: "Contact", href: "#contact" },
-            ].map((item) => (
+          {/* ── Desktop Navigation ── */}
+          <div className="hidden md:flex items-center gap-1">
+            {NAV_LINKS.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="group relative px-4 py-2 text-gray-300 font-medium transition-all duration-300 hover:text-white"
+                className={`relative px-4 py-2 text-sm font-semibold transition-colors duration-300 ${
+                  active === item.href.slice(1)
+                    ? "text-[#DC2626]"
+                    : "text-gray-500 hover:text-gray-900"
+                }`}
               >
-                <span className="relative z-10">{item.name}</span>
-                <span className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-3/4 transition-all duration-300"></span>
+                {item.name}
+                {active === item.href.slice(1) && (
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 w-5 bg-[#DC2626] rounded-full" />
+                )}
               </a>
             ))}
+            <button
+              onClick={onResumeOpen}
+              className="ml-3 inline-flex items-center gap-1.5 px-4 py-2 text-sm font-semibold text-gray-600 border border-gray-200 rounded-lg hover:border-[#DC2626] hover:text-[#DC2626] transition-all duration-200"
+            >
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+              </svg>
+              Resume
+            </button>
+            <a
+              href="#contact"
+              className="ml-2 px-5 py-2.5 bg-[#DC2626] text-white text-sm font-bold rounded-lg hover:bg-[#B91C1C] transition-colors duration-300 shadow-[0_2px_8px_rgba(220,38,38,0.35)]"
+            >
+              Hire Me
+            </a>
           </div>
+
         </div>
       </div>
     </nav>
