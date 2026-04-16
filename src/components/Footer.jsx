@@ -111,6 +111,7 @@ const Footer = () => {
             © {new Date().getFullYear()} Sivakami Iyarkai Suvai. All rights reserved.
           </p>
           <p className="text-white/30 text-xs">Made with ❤️ for pure, homemade taste</p>
+          <p className="text-white/30 text-xs">Developed by Rishi Kumar</p>
         </div>
       </div>
     </footer>
