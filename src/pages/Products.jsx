@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaWhatsapp } from "react-icons/fa";
+import { HiCollection } from "react-icons/hi";
 import ProductCard from "../components/ProductCard";
 import { products } from "../data/projects";
 
-const FILTERS = ["All", "Best Seller", "Health Pick", "Classic", "Signature"];
+const FILTERS = ["All", "Health Pick", "Best Seller", "Classic", "Signature", "Healthy Snack"];
 
 const Products = () => {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -35,15 +36,17 @@ const Products = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <div className="text-5xl mb-6">🌶️</div>
+            <div className="w-20 h-20 rounded-3xl flex items-center justify-center mx-auto mb-6" style={{ backgroundColor: "rgba(212,163,115,0.2)", border: "1px solid rgba(212,163,115,0.3)" }}>
+              <HiCollection className="w-10 h-10" style={{ color: "#D4A373" }} />
+            </div>
             <h1
               className="font-black text-white mb-4 leading-tight"
               style={{ fontSize: "clamp(2.5rem, 6vw, 4rem)", fontFamily: "'Playfair Display', serif" }}
             >
-              Our Spice Podis
+              Our Products
             </h1>
             <p className="text-lg max-w-xl mx-auto" style={{ color: "rgba(255,255,255,0.7)" }}>
-              Each podi is crafted fresh, in small batches, with pure ingredients and traditional recipes.
+              Homemade with care, prepared in small batches, with pure traditional ingredients. Nutrition you can taste in every spoon.
             </p>
           </motion.div>
         </div>

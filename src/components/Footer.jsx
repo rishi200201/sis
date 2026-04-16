@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaWhatsapp, FaInstagram, FaFacebook } from "react-icons/fa";
-import { HiMail, HiPhone, HiLocationMarker } from "react-icons/hi";
+import { HiPhone, HiLocationMarker } from "react-icons/hi";
 
 const WHATSAPP = "919840929841";
 
@@ -13,20 +13,20 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ backgroundColor: "#D4A373" }}>
+              <div className="w-16 h-16 rounded-2xl overflow-hidden flex-shrink-0" style={{ backgroundColor: "#F5E9DC" }}>
                 <img
-                  src="/images/logo.jpeg"
-                  alt="Sivakami Iyarkai Suvai logo"
-                  className="w-10 h-10 rounded-lg object-cover"
+                  src="/images/logo-full.jpeg"
+                  alt="Sivakami's Iyarkai Suvai"
+                  className="w-full h-full object-contain"
                 />
               </div>
               <div>
-                <div className="font-bold text-xl text-white">Sivakami</div>
+                <div className="font-bold text-xl text-white">Sivakami's</div>
                 <div className="text-sm font-medium" style={{ color: "#D4A373" }}>Iyarkai Suvai</div>
               </div>
             </div>
             <p className="text-white/60 text-sm leading-relaxed max-w-sm mb-6">
-              Crafting authentic homemade spice podis with pure ingredients and traditional recipes passed down through generations. Every jar carries the warmth of home.
+              Homemade food products crafted with care, purity, and purpose. Making healthy eating simple, tasty, and practical for children and adults — rooted in Indian culinary tradition.
             </p>
             <div className="flex items-center gap-3">
               <a
@@ -91,15 +91,11 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start gap-2.5 text-sm text-white/60">
                 <HiLocationMarker className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: "#D4A373" }} />
-                <span>Chennai, Tamil Nadu, India</span>
+                <span>No 190, 164th Street, 6th Block,<br />Muthamizh Nagar, Kodungaiyur,<br />Chennai – 600118</span>
               </li>
               <li className="flex items-center gap-2.5 text-sm text-white/60">
                 <HiPhone className="w-4 h-4 flex-shrink-0" style={{ color: "#D4A373" }} />
                 <a href="tel:+919840929841" className="hover:text-white transition-colors">+91 98409 29841</a>
-              </li>
-              <li className="flex items-center gap-2.5 text-sm text-white/60">
-                <HiMail className="w-4 h-4 flex-shrink-0" style={{ color: "#D4A373" }} />
-                <a href="mailto:sivakami@example.com" className="hover:text-white transition-colors">sivakami@example.com</a>
               </li>
             </ul>
           </div>
@@ -108,9 +104,9 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="border-t pt-6 flex flex-col sm:flex-row items-center justify-between gap-3" style={{ borderColor: "rgba(255,255,255,0.1)" }}>
           <p className="text-white/40 text-xs text-center sm:text-left">
-            © {new Date().getFullYear()} Sivakami Iyarkai Suvai. All rights reserved.
+            © {new Date().getFullYear()} Sivakami's Iyarkai Suvai. All rights reserved.
           </p>
-          <p className="text-white/30 text-xs">Made with ❤️ for pure, homemade taste</p>
+          <p className="text-white/30 text-xs">Where Tradition Meets Health</p>
           <p className="text-white/30 text-xs">Developed by Rishi Kumar</p>
         </div>
       </div>

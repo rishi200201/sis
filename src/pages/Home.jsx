@@ -23,23 +23,23 @@ const fadeUp = {
 const whyItems = [
   {
     icon: <HiHeart className="w-7 h-7" />,
-    title: "Made with Love",
-    desc: "Every batch is prepared by hand with the care and patience of a home kitchen.",
-  },
-  {
-    icon: <HiShieldCheck className="w-7 h-7" />,
-    title: "Pure Ingredients",
-    desc: "No preservatives, no artificial colours. Just nature's finest spices and grains.",
+    title: "Homemade in Small Batches",
+    desc: "Prepared with care and responsibility in our own kitchen — never factory-made.",
   },
   {
     icon: <GiMortar className="w-7 h-7" />,
-    title: "Traditional Recipes",
-    desc: "Ancestral recipes perfected over generations, bringing authentic flavour to your table.",
+    title: "Rooted in Tradition",
+    desc: "Every recipe is rooted in Indian culinary wisdom, passed down through generations.",
+  },
+  {
+    icon: <HiShieldCheck className="w-7 h-7" />,
+    title: "Carefully Chosen Ingredients",
+    desc: "Only natural, carefully selected ingredients — no preservatives, no artificial additives.",
   },
   {
     icon: <MdDeliveryDining className="w-7 h-7" />,
-    title: "Fresh Delivery",
-    desc: "Freshly prepared and delivered to your doorstep — flavour sealed at its peak.",
+    title: "Health Without Compromise",
+    desc: "Thoughtfully made for children and adults to enjoy daily nutrition, effortlessly.",
   },
 ];
 
@@ -87,7 +87,7 @@ const Home = () => {
                 style={{ backgroundColor: "rgba(212,163,115,0.2)", border: "1px solid rgba(212,163,115,0.4)", color: "#D4A373" }}
               >
                 <HiSparkles className="w-4 h-4" />
-                100% Natural · Homemade · Traditional
+                Homemade · Traditional · Health-Focused
               </motion.div>
 
               <motion.h1
@@ -98,8 +98,7 @@ const Home = () => {
                 className="font-black leading-tight text-white mb-4"
                 style={{ fontSize: "clamp(2.5rem, 6vw, 4rem)", fontFamily: "'Playfair Display', serif" }}
               >
-                Taste the Tradition of{" "}
-                <span style={{ color: "#D4A373" }}>Sivakami</span>{" "}
+                <span style={{ color: "#D4A373" }}>Sivakami's</span>{" "}
                 Iyarkai Suvai
               </motion.h1>
 
@@ -111,7 +110,7 @@ const Home = () => {
                 className="text-lg leading-relaxed mb-8 max-w-lg"
                 style={{ color: "rgba(255,255,255,0.7)" }}
               >
-                Authentic homemade spice podis crafted with pure ingredients and love. From our kitchen to your table — bringing the true flavours of Tamil Nadu.
+                Where Tradition Meets Health. Homemade food products crafted with care, purity, and purpose — making healthy eating simple, tasty, and practical for the whole family.
               </motion.p>
 
               <motion.div
@@ -161,7 +160,7 @@ const Home = () => {
                 style={{ borderTop: "1px solid rgba(255,255,255,0.1)" }}
               >
                 {[
-                  { num: "4+", label: "Signature Podis" },
+                  { num: "6+", label: "Homemade Products" },
                   { num: "500+", label: "Happy Families" },
                   { num: "100%", label: "Natural & Pure" },
                 ].map(({ num, label }) => (
@@ -194,8 +193,8 @@ const Home = () => {
                   className="absolute inset-0"
                 >
                   <img
-                    src="/images/product.jpeg"
-                    alt="Sivakami Iyarkai Suvai products"
+                    src="/images/multiseed-hero.jpeg"
+                    alt="Sivakami's Iyarkai Suvai products"
                     className="w-full h-full object-cover"
                   />
                 </motion.div>
@@ -204,8 +203,8 @@ const Home = () => {
                   style={{ background: "linear-gradient(to top, rgba(44,26,14,0.9), transparent)" }}
                 />
                 <div className="text-center relative z-10 mt-auto pb-4">
-                  <div className="text-xl font-black text-white">Freshly Prepared</div>
-                  <div className="text-sm mt-1" style={{ color: "#D4A373" }}>Every batch made with love</div>
+                  <div className="text-xl font-black text-white">Freshly Homemade</div>
+                  <div className="text-sm mt-1" style={{ color: "#D4A373" }}>Where Tradition Meets Health</div>
                 </div>
                 {/* Floating badges */}
                 <motion.div
@@ -250,15 +249,23 @@ const Home = () => {
               className="relative"
             >
               <div
-                className="rounded-3xl p-10 flex flex-col items-center justify-center gap-4 min-h-[320px] relative overflow-hidden"
+                className="rounded-3xl flex flex-col items-center justify-center gap-4 min-h-[320px] relative overflow-hidden"
                 style={{
                   background: "linear-gradient(135deg, #6B3E2E, #8B5E52)",
                 }}
               >
-                <div className="text-8xl">🌶️🫙🍃</div>
-                <div className="text-center">
-                  <div className="text-3xl font-black text-white font-playfair">Pure. Natural. Homemade.</div>
-                  <div className="text-sm mt-2 text-white/70">Traditional Tamil Nadu flavours</div>
+                <img
+                  src="/images/group-products.jpeg"
+                  alt="Sivakami's Iyarkai Suvai product range"
+                  className="w-full h-full object-cover absolute inset-0"
+                />
+                <div
+                  className="absolute inset-0"
+                  style={{ background: "linear-gradient(to top, rgba(44,26,14,0.85) 0%, rgba(44,26,14,0.2) 60%, transparent 100%)" }}
+                />
+                <div className="relative z-10 text-center mt-auto pb-8 px-6">
+                  <div className="text-2xl font-black text-white font-playfair">Pure. Natural. Homemade.</div>
+                  <div className="text-sm mt-2" style={{ color: "#D4A373" }}>Where Tradition Meets Health</div>
                 </div>
                 <div
                   className="absolute -bottom-10 -right-10 w-40 h-40 rounded-full opacity-20"
@@ -284,13 +291,13 @@ const Home = () => {
                 className="font-black mb-4 leading-tight"
                 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "#2C1A0E", fontFamily: "'Playfair Display', serif" }}
               >
-                Cooking from the Heart of Tamil Nadu
+                Healthy Eating, Made Simple
               </h2>
               <p className="text-base leading-relaxed mb-4" style={{ color: "#6B5040" }}>
-                Sivakami Iyarkai Suvai was born from a simple belief — that the best food comes from clean ingredients and patient hands. Every spice we use is carefully sourced, every recipe perfected over years.
+                In today's fast-paced lifestyle, where both parents are working and time is limited, providing healthy food — especially for children — has become a real challenge.
               </p>
               <p className="text-base leading-relaxed mb-8" style={{ color: "#6B5040" }}>
-                Our podis carry no artificial additives — just the pure, wholesome taste of tradition that you can feel in every bite.
+                Sivakami's Iyarkai Suvai products are thoughtfully created to blend nutrition effortlessly into everyday meals, so children and adults can enjoy wholesome ingredients without any resistance.
               </p>
               <Link
                 to="/about"
@@ -325,10 +332,10 @@ const Home = () => {
               className="font-black leading-tight mb-3"
               style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "#2C1A0E", fontFamily: "'Playfair Display', serif" }}
             >
-              Featured Spice Podis
+              Our Featured Products
             </h2>
             <p className="text-base max-w-xl mx-auto" style={{ color: "#6B5040" }}>
-              Handcrafted in small batches to ensure maximum freshness and flavour in every jar.
+              Prepared in small batches with carefully chosen natural ingredients — nutrition you can taste and trust.
             </p>
           </motion.div>
 
@@ -378,7 +385,7 @@ const Home = () => {
               className="font-black leading-tight"
               style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "#2C1A0E", fontFamily: "'Playfair Display', serif" }}
             >
-              Why Choose Sivakami?
+              What Makes Us Special
             </h2>
           </motion.div>
 
@@ -431,15 +438,17 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="text-5xl mb-6">🌶️</div>
+            <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6" style={{ backgroundColor: "rgba(212,163,115,0.2)", border: "1px solid rgba(212,163,115,0.3)" }}>
+              <HiSparkles className="w-8 h-8" style={{ color: "#D4A373" }} />
+            </div>
             <h2
               className="font-black text-white mb-4 leading-tight"
               style={{ fontSize: "clamp(1.8rem, 4vw, 2.8rem)", fontFamily: "'Playfair Display', serif" }}
             >
-              Ready to Experience Authentic Flavour?
+              Ready to Bring Tradition to Your Table?
             </h2>
             <p className="text-lg mb-8" style={{ color: "rgba(255,255,255,0.7)" }}>
-              Order your favourite podis today and get them delivered fresh to your doorstep.
+              Order today and get freshly prepared products delivered to your doorstep. We reply within minutes on WhatsApp!
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link

@@ -1,18 +1,21 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaWhatsapp } from "react-icons/fa";
-import { HiMail, HiPhone, HiLocationMarker, HiClock } from "react-icons/hi";
+import { HiPhone, HiLocationMarker, HiClock, HiChatAlt2 } from "react-icons/hi";
 
 const WHATSAPP = "919840929841";
-const EMAIL = "sivakami@example.com";
 const PHONE = "+91 98409 29841";
-const ADDRESS = "Chennai, Tamil Nadu, India";
+const ADDRESS = "No 190, 164th Street, 6th Block, Muthamizh Nagar, Kodungaiyur, Chennai – 600118";
 
 const PROJECT_TYPES = [
+  "Multi-Seed Health Podi",
   "Classic Gun Powder",
-  "Multi Seed Health Podi",
-  "Idli Podi",
-  "Curry Leaf Podi",
+  "Paruppu Podi",
+  "Kulumbu Millagai Thool (250g)",
+  "Kulumbu Millagai Thool (500g)",
+  "Kulumbu Millagai Thool (1kg)",
+  "Honey Thinai Laddu",
+  "Pasi Paruppu Laddu",
   "Mixed Combo",
   "Other / Custom",
 ];
@@ -85,7 +88,9 @@ const Contact = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <div className="text-5xl mb-6">📞</div>
+            <div className="w-20 h-20 rounded-3xl flex items-center justify-center mx-auto mb-6" style={{ backgroundColor: "rgba(212,163,115,0.2)", border: "1px solid rgba(212,163,115,0.3)" }}>
+              <HiChatAlt2 className="w-10 h-10" style={{ color: "#D4A373" }} />
+            </div>
             <h1
               className="font-black text-white mb-4 leading-tight"
               style={{ fontSize: "clamp(2.5rem, 6vw, 4rem)", fontFamily: "'Playfair Display', serif" }}
@@ -93,7 +98,7 @@ const Contact = () => {
               Get in Touch
             </h1>
             <p className="text-lg max-w-xl mx-auto" style={{ color: "rgba(255,255,255,0.7)" }}>
-              Ready to order or have questions? We're just a message away. We reply within minutes!
+              Ready to order or have a question? We're just a WhatsApp message away — we reply within minutes!
             </p>
           </motion.div>
         </div>
@@ -120,8 +125,7 @@ const Contact = () => {
                 <div className="space-y-5">
                   {[
                     { icon: <HiLocationMarker className="w-5 h-5" />, label: "Address", value: ADDRESS, href: null },
-                    { icon: <HiPhone className="w-5 h-5" />, label: "Phone", value: PHONE, href: `tel:${PHONE}` },
-                    { icon: <HiMail className="w-5 h-5" />, label: "Email", value: EMAIL, href: `mailto:${EMAIL}` },
+                    { icon: <HiPhone className="w-5 h-5" />, label: "Phone / WhatsApp", value: PHONE, href: `tel:${PHONE}` },
                     { icon: <HiClock className="w-5 h-5" />, label: "Hours", value: "Mon – Sat · 9 AM – 7 PM", href: null },
                   ].map(({ icon, label, value, href }) => (
                     <div key={label} className="flex items-start gap-3">
@@ -159,16 +163,18 @@ const Contact = () => {
                 </div>
               </a>
 
-              {/* Map placeholder */}
-              <div
-                className="rounded-2xl overflow-hidden h-48 flex items-center justify-center text-center p-6"
-                style={{ backgroundColor: "#EDD9C0", border: "1px solid rgba(212,163,115,0.3)" }}
-              >
-                <div>
-                  <div className="text-4xl mb-2">📍</div>
-                  <div className="text-sm font-semibold" style={{ color: "#6B3E2E" }}>Chennai, Tamil Nadu</div>
-                  <div className="text-xs mt-1" style={{ color: "#9CA3AF" }}>Serving across India</div>
-                </div>
+              {/* Map */}
+              <div className="rounded-2xl overflow-hidden" style={{ height: "220px", border: "1px solid rgba(212,163,115,0.3)" }}>
+                <iframe
+                  title="Sivakami's Iyarkai Suvai Location"
+                  src="https://maps.google.com/maps?q=Muthamizh+Nagar+Kodungaiyur+Chennai+600118&output=embed&z=15"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
               </div>
             </motion.div>
 

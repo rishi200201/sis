@@ -47,19 +47,19 @@ export const Navbar = () => {
           <div className="flex items-center justify-between h-16 lg:h-20">
 
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-2.5 group">
+            <Link to="/" className="flex items-center gap-2 group">
               <div
-                className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110"
-                style={{ backgroundColor: "#D4A373" }}
+                className="h-11 w-11 rounded-xl overflow-hidden flex-shrink-0 transition-transform duration-300 group-hover:scale-105"
+                style={{ backgroundColor: "#F5E9DC" }}
               >
                 <img
-                  src="/images/logo.jpeg"
-                  alt="Sivakami Iyarkai Suvai logo"
-                  className="w-9 h-9 rounded-lg object-cover"
+                  src="/images/logo-full.jpeg"
+                  alt="Sivakami's Iyarkai Suvai"
+                  className="w-full h-full object-contain"
                 />
               </div>
               <div className="leading-tight">
-                <div className="font-bold text-white text-sm leading-none">Sivakami</div>
+                <div className="font-bold text-white text-sm leading-none">Sivakami's</div>
                 <div className="text-[10px] font-medium leading-none mt-0.5" style={{ color: "#D4A373" }}>
                   Iyarkai Suvai
                 </div>

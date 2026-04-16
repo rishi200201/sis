@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaStar } from "react-icons/fa";
+import { FaStar, FaQuoteLeft } from "react-icons/fa";
 import ReviewCard from "../components/ReviewCard";
 import { reviews } from "../data/reviews";
 
@@ -27,7 +27,9 @@ const Reviews = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <div className="text-5xl mb-6">⭐</div>
+            <div className="w-20 h-20 rounded-3xl flex items-center justify-center mx-auto mb-6" style={{ backgroundColor: "rgba(212,163,115,0.2)", border: "1px solid rgba(212,163,115,0.3)" }}>
+              <FaStar className="w-10 h-10" style={{ color: "#D4A373" }} />
+            </div>
             <h1
               className="font-black text-white mb-4 leading-tight"
               style={{ fontSize: "clamp(2.5rem, 6vw, 4rem)", fontFamily: "'Playfair Display', serif" }}
@@ -77,7 +79,9 @@ const Reviews = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="text-5xl mb-4">💬</div>
+            <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: "rgba(107,62,46,0.1)" }}>
+              <FaQuoteLeft className="w-7 h-7" style={{ color: "#6B3E2E" }} />
+            </div>
             <h2
               className="font-black mb-3"
               style={{ fontSize: "clamp(1.8rem, 3vw, 2.5rem)", color: "#2C1A0E", fontFamily: "'Playfair Display', serif" }}

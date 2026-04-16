@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaWhatsapp, FaStar } from "react-icons/fa";
 import { HiSparkles } from "react-icons/hi";
@@ -5,8 +6,12 @@ import { HiSparkles } from "react-icons/hi";
 const WHATSAPP = "919840929841";
 
 const ProductCard = ({ product, index = 0 }) => {
+  const isMultiSize = Array.isArray(product.sizes) && product.sizes.length > 0;
+  const [selectedSize, setSelectedSize] = useState(isMultiSize ? 0 : null);
+
   const handleOrder = () => {
-    const url = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(product.whatsappMsg)}`;
+    const msg = isMultiSize ? product.sizes[selectedSize].whatsappMsg : product.whatsappMsg;
+    const url = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
     window.open(url, "_blank", "noopener,noreferrer");
   };
 
@@ -80,7 +85,7 @@ const ProductCard = ({ product, index = 0 }) => {
         </div>
 
         <p className="text-xs font-semibold mb-3" style={{ color: "#D4A373" }}>
-          {product.tagline} · {product.weight}
+          {product.tagline}{product.weight ? ` · ${product.weight}` : isMultiSize ? ` · 250g / 500g / 1kg` : ""}
         </p>
 
         <p className="text-sm leading-relaxed flex-1 mb-4" style={{ color: "#6B5040" }}>
@@ -89,10 +94,38 @@ const ProductCard = ({ product, index = 0 }) => {
 
         <div className="flex items-center justify-between pt-4" style={{ borderTop: "1px solid rgba(212,163,115,0.2)" }}>
           <div>
-            <span className="text-2xl font-black" style={{ color: "#6B3E2E" }}>
-              {product.price}
-            </span>
-            <span className="text-xs ml-1" style={{ color: "#9CA3AF" }}>/ {product.weight}</span>
+            {isMultiSize ? (
+              <div>
+                <div className="flex flex-wrap gap-1.5 mb-1">
+                  {product.sizes.map((s, i) => (
+                    <button
+                      key={s.weight}
+                      onClick={() => setSelectedSize(i)}
+                      className="px-2.5 py-1 rounded-lg text-xs font-bold transition-all duration-150"
+                      style={
+                        selectedSize === i
+                          ? { backgroundColor: "#6B3E2E", color: "#F5E9DC" }
+                          : { backgroundColor: "#F5E9DC", color: "#6B3E2E", border: "1px solid rgba(107,62,46,0.25)" }
+                      }
+                    >
+                      {s.weight}
+                    </button>
+                  ))}
+                </div>
+                <span className="text-2xl font-black" style={{ color: "#6B3E2E" }}>
+                  {product.sizes[selectedSize].price}
+                </span>
+              </div>
+            ) : (
+              <div>
+                <span className="text-2xl font-black" style={{ color: "#6B3E2E" }}>
+                  {product.price || "Enquire"}
+                </span>
+                {product.weight && (
+                  <span className="text-xs ml-1" style={{ color: "#9CA3AF" }}>/ {product.weight}</span>
+                )}
+              </div>
+            )}
           </div>
           <button
             onClick={handleOrder}

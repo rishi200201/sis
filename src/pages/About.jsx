@@ -6,31 +6,31 @@ import { Link } from "react-router-dom";
 const values = [
   {
     icon: <HiHeart className="w-7 h-7" />,
-    title: "Made with Love",
-    desc: "Every spoonful carries the warmth and dedication of a home kitchen. We treat every batch as if we're cooking for our own family.",
+    title: "Homemade with Care",
+    desc: "Every product is made with the same love and responsibility we apply to cooking for our own family.",
   },
   {
     icon: <HiShieldCheck className="w-7 h-7" />,
-    title: "Zero Preservatives",
-    desc: "Absolutely no artificial additives, colours, or preservatives. What you see is what you eat — pure, clean ingredients.",
+    title: "No Unnecessary Additives",
+    desc: "Absolutely no artificial additives or preservatives. Only naturally clean, pure ingredients in every pack.",
   },
   {
     icon: <GiMortar className="w-7 h-7" />,
-    title: "Traditional Process",
-    desc: "We use the same stone-grinding and slow-roasting methods that have been passed down through generations of Tamil kitchens.",
+    title: "Traditional Methods",
+    desc: "We use time-honoured preparation methods — with modern awareness of health and nutrition needs.",
   },
   {
     icon: <GiMasonJar className="w-7 h-7" />,
-    title: "Fresh Every Batch",
-    desc: "We prepare in small, controlled batches to ensure peak freshness, aroma, and flavour in every jar that leaves our kitchen.",
+    title: "Fresh Small Batches",
+    desc: "We prepare in small, controlled batches to ensure peak freshness and quality in every product that leaves our kitchen.",
   },
 ];
 
 const timeline = [
-  { year: "The Beginning", title: "A grandmother's recipe", desc: "It started in a small kitchen in Tamil Nadu, where Sivakami amma made her famous podis for her family every week." },
-  { year: "The Passion", title: "Preserving tradition", desc: "As her family grew and moved across cities, the demand for her podis grew. Children and grandchildren would ask her to pack jars to take back." },
-  { year: "The Brand", title: "Sivakami Iyarkai Suvai", desc: "Inspired by the love her podis brought, the family decided to share these flavours with the world. Sivakami Iyarkai Suvai was born." },
-  { year: "Today", title: "Serving 500+ families", desc: "Today, hundreds of families across Tamil Nadu and beyond enjoy our podis — bringing authentic tradition to modern tables." },
+  { year: "The Challenge", title: "A real everyday problem", desc: "Like many modern families, we found it difficult to balance work, home, and the responsibility of giving our children nutritious food. Limited time made healthy meal preparation a daily struggle." },
+  { year: "The Realisation", title: "Healthy food, without resistance", desc: "Convincing children to eat healthy was never easy. We wanted to create food that could blend nutrition effortlessly into everyday meals — so children and adults would consume healthy ingredients without resistance." },
+  { year: "The Beginning", title: "Multi-Seed Health Podi", desc: "This thought became the foundation of our first product — the Multi-Seed Health Podi. A nutritious blend that could be simply mixed with rice, dosa, or idli — easy for the whole family." },
+  { year: "Today", title: "Serving 500+ families", desc: "What started as a solution for our own family became something we wanted to share. Today, hundreds of families enjoy our products — bringing wholesome nutrition to modern tables." },
 ];
 
 const About = () => {
@@ -55,7 +55,9 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <div className="text-5xl mb-6">🫙</div>
+            <div className="w-20 h-20 rounded-3xl flex items-center justify-center mx-auto mb-6" style={{ backgroundColor: "rgba(212,163,115,0.2)", border: "1px solid rgba(212,163,115,0.3)" }}>
+              <GiMasonJar className="w-10 h-10" style={{ color: "#D4A373" }} />
+            </div>
             <h1
               className="font-black text-white mb-4 leading-tight"
               style={{ fontSize: "clamp(2.5rem, 6vw, 4rem)", fontFamily: "'Playfair Display', serif" }}
@@ -63,7 +65,7 @@ const About = () => {
               Our Story
             </h1>
             <p className="text-lg max-w-2xl mx-auto" style={{ color: "rgba(255,255,255,0.7)" }}>
-              Rooted in Tamil tradition. Crafted with love. Delivered fresh to your family's table.
+              Born from a real family need. Crafted with love. Delivered fresh to your home.
             </p>
           </motion.div>
         </div>
@@ -91,13 +93,13 @@ const About = () => {
               </h2>
               <div className="space-y-4 text-base leading-relaxed" style={{ color: "#6B5040" }}>
                 <p>
-                  Sivakami Iyarkai Suvai — which means "Nature's Taste" in Tamil — was founded on a simple, powerful idea: that the most nourishing food comes from pure ingredients and patient hands.
+                  Sivakami's Iyarkai Suvai — which means “Nature's Taste” in Tamil — was born from a real, everyday experience.
                 </p>
                 <p>
-                  Our spice podis are made exactly the way they have been for generations in Tamil Nadu — slow-roasted, stone-ground, and packed without any artificial additives or shortcuts. We believe food is medicine, and every ingredient we use reflects that belief.
+                  Like many modern families, we found it difficult to balance work, home, and the responsibility of giving our children nutritious food. Limited time made daily preparation of healthy meals challenging. At the same time, convincing children to eat healthy was never easy.
                 </p>
                 <p>
-                  From the bold kick of our Classic Gun Powder to the gentle warmth of our Idli Podi, every product carries the authenticity of home cooking. We are not a factory. We are a kitchen — and every jar shows it.
+                  This led us to create food products that could blend nutrition effortlessly into everyday meals — so children and adults could consume healthy ingredients without resistance. Our aim is to help families include wholesome nutrition naturally in their daily lives. Every product reflects care, tradition, and conscious living.
                 </p>
               </div>
             </motion.div>
@@ -118,9 +120,9 @@ const About = () => {
                   className="text-2xl font-black text-white leading-tight"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
-                  &ldquo;Pure ingredients,<br />honest flavour,<br />pure love.&rdquo;
+                  &ldquo;Our products help<br />families eat well,<br />every single day.&rdquo;
                 </p>
-                <p className="text-sm mt-4" style={{ color: "rgba(212,163,115,0.8)" }}>— Sivakami Amma</p>
+                <p className="text-sm mt-4" style={{ color: "rgba(212,163,115,0.8)" }}>— Sivakami's Iyarkai Suvai</p>
                 <div className="absolute -bottom-12 -right-12 w-48 h-48 rounded-full opacity-10" style={{ backgroundColor: "#D4A373" }} />
               </div>
             </motion.div>
@@ -141,7 +143,7 @@ const About = () => {
               className="font-black leading-tight"
               style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "#2C1A0E", fontFamily: "'Playfair Display', serif" }}
             >
-              Our Journey
+              How It All Began
             </h2>
           </motion.div>
 
@@ -191,7 +193,7 @@ const About = () => {
               className="font-black leading-tight"
               style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "#2C1A0E", fontFamily: "'Playfair Display', serif" }}
             >
-              Our Values
+              Our Promise
             </h2>
           </motion.div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
