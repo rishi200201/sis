@@ -1,98 +1,64 @@
-
-export const projects = [
-  // ── Live sites (custom domain) ──────────────────────────────────────
+export const products = [
   {
-    title: "FCTamilions",
+    id: 1,
+    name: "Classic Gun Powder",
+    tagline: "Bold & Fiery",
     description:
-      "Dynamic Tamil fan-community platform delivering sports news, match updates, and fan engagement for Tamil culture enthusiasts.",
-    technologies: ["React", "TailwindCSS", "Vite"],
-    gradient: "from-orange-500 to-amber-500",
-    iconType: "trophy",
-    url: "https://fctamilions.com/",
-    badge: "Live",
+      "A bold, aromatic spice blend crafted from slow-roasted lentils, dried red chilies, garlic, and traditional spices. The perfect companion for idli, dosa, and hot steamed rice with a dollop of ghee.",
+    price: "₹120",
+    weight: "100g",
+    emoji: "🌶️",
+    gradient: "from-red-900 via-red-700 to-orange-600",
+    image: "/images/product2.jpeg",
+    bgLight: "#FFF0ED",
+    badge: "Best Seller",
+    whatsappMsg: "Hi! I'd like to order *Classic Gun Powder* (100g) — ₹120. Please confirm availability.",
   },
   {
-    title: "5 Rings",
+    id: 2,
+    name: "Multi Seed Health Podi",
+    tagline: "Nutritious & Wholesome",
     description:
-      "Multi-sport platform featuring match updates, team profiles, and scheduling — built for peak performance and user engagement.",
-    technologies: ["React", "TailwindCSS", "Vite"],
-    gradient: "from-yellow-400 to-orange-500",
-    iconType: "activity",
-    url: "https://5rings.in/",
-    badge: "Live",
+      "A superfood blend of roasted sesame, flaxseed, sunflower seeds, and pumpkin seeds ground with mild spices. Packed with omega-3 fatty acids and antioxidants — ideal for a healthy lifestyle.",
+    price: "₹150",
+    weight: "100g",
+    emoji: "🌿",
+    gradient: "from-green-900 via-green-700 to-emerald-500",
+    image: "/images/product.jpeg",
+    bgLight: "#EDFAF3",
+    badge: "Health Pick",
+    whatsappMsg: "Hi! I'd like to order *Multi Seed Health Podi* (100g) — ₹150. Please confirm availability.",
   },
   {
-    title: "NVZ Website",
+    id: 3,
+    name: "Idli Podi",
+    tagline: "Traditional & Comforting",
     description:
-      "Responsive freelance site built with React + Vite and a hybrid Material UI + Tailwind design system. Fast, polished, and client-focused.",
-    technologies: ["React", "Vite", "Material UI", "TailwindCSS"],
-    gradient: "from-indigo-500 to-blue-500",
-    iconType: "briefcase",
-    url: "https://nivuzzdesign.github.io/NVZ/",
-    badge: "Live",
+      "The timeless breakfast staple — a gentle blend of urad dal, chana dal, red chili, sesame, and curry leaves roasted to perfection. Pairs beautifully with soft idlis and crispy dosas.",
+    price: "₹100",
+    weight: "100g",
+    emoji: "🫙",
+    gradient: "from-amber-800 via-amber-600 to-yellow-500",
+    image: "/images/product.jpeg",
+    bgLight: "#FFF8ED",
+    badge: "Classic",
+    whatsappMsg: "Hi! I'd like to order *Idli Podi* (100g) — ₹100. Please confirm availability.",
   },
   {
-    title: "Fine Click Photography",
+    id: 4,
+    name: "Curry Leaf Podi",
+    tagline: "Fragrant & Iron-Rich",
     description:
-      "Minimal, elegant photography showcase with performance optimisations and a distraction-free viewing experience.",
-    technologies: ["React", "Vite", "Material UI", "TailwindCSS"],
-    gradient: "from-pink-500 to-rose-500",
-    iconType: "camera",
-    url: "https://fineclickphotography.github.io/fine_click/",
-    badge: "Live",
-  },
-  // ── Hosted (Vercel, no custom domain) ────────────────────────────────
-  {
-    title: "Friends Xerox Corner",
-    description:
-      "Digital storefront for a local xerox and printing service, making it easy for customers to explore services and get in touch instantly.",
-    technologies: ["React", "TailwindCSS", "Vercel"],
-    gradient: "from-sky-500 to-blue-600",
-    iconType: "printer",
-    url: "https://fnc-ch113.vercel.app/",
-    badge: "Hosted",
-  },
-  {
-    title: "Super Market Enquiry",
-    description:
-      "Customer-centric enquiry portal for Sri Saravana Store, helping shoppers check product availability and connect in seconds.",
-    technologies: ["React", "TailwindCSS", "Vercel"],
-    gradient: "from-green-500 to-emerald-600",
-    iconType: "store",
-    url: "https://sri-saravana-store-ch113.vercel.app/",
-    badge: "Hosted",
-  },
-  {
-    title: "Royal Enterprises Packaging & Storage",
-    description:
-      "Professional business website showcasing packaging and storage solutions, services, and contact details for Royal Enterprises.",
-    technologies: ["React", "TailwindCSS", "Vercel"],
-    gradient: "from-amber-500 to-yellow-600",
-    iconType: "package",
-    url: "http://re-ch113.vercel.app/",
-    badge: "Hosted",
-  },
-  // ── Personal / concept projects ──────────────────────────────────────
-  {
-    title: "Birthday Cards Portfolio",
-    description:
-      "Unique personalised digital birthday card portfolios crafted as memorable gifts — blending design, animation, and emotion.",
-    technologies: ["React", "TailwindCSS", "Vite"],
-    gradient: "from-rose-500 to-pink-600",
-    iconType: "gift",
-    badge: "Personal",
-  },
-  {
-    title: "MSK Mart (E-Commerce)",
-    description:
-      "Full-stack e-commerce platform with secure payments, inventory controls, and an adaptive layout for all devices.",
-    technologies: ["React", "Express.js", "MongoDB", "Stripe"],
-    gradient: "from-emerald-500 to-teal-500",
-    iconType: "cart",
-    badge: "Personal",
+      "Sun-dried organic curry leaves ground with urad dal, sesame, tamarind, and a hint of asafoetida. Bursting with fragrance, rich in iron and vitamins — a uniquely flavourful and healthy choice.",
+    price: "₹110",
+    weight: "100g",
+    emoji: "🍃",
+    gradient: "from-lime-800 via-lime-600 to-green-400",
+    image: "/images/product2.jpeg",
+    bgLight: "#F0FAED",
+    badge: "Signature",
+    whatsappMsg: "Hi! I'd like to order *Curry Leaf Podi* (100g) — ₹110. Please confirm availability.",
   },
 ];
 
-export function getProjectSlug(title) {
-  return title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
-}
+export default products;
